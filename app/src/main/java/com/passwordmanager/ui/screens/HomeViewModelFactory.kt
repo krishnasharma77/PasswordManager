@@ -1,4 +1,4 @@
-package com.passwordmanager.ui.theme
+package com.passwordmanager.ui.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

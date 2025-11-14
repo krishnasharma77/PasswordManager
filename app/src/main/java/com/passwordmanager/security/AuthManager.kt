@@ -34,7 +34,6 @@ class AuthManager(private val activity: FragmentActivity) {
             override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
                 super.onAuthenticationError(errorCode, errString)
                 Log.d("AuthManager", "Authentication error: $errorCode - $errString")
-                // Only call onError for actual errors, not user cancellation
                 if (errorCode != BiometricPrompt.ERROR_NEGATIVE_BUTTON &&
                     errorCode != BiometricPrompt.ERROR_USER_CANCELED) {
                     onError(errString.toString())
@@ -44,7 +43,6 @@ class AuthManager(private val activity: FragmentActivity) {
             override fun onAuthenticationFailed() {
                 super.onAuthenticationFailed()
                 Log.d("AuthManager", "Authentication failed - fingerprint not recognized")
-                // Don't call onError - let user retry
             }
         }
 
@@ -72,11 +70,10 @@ class AuthManager(private val activity: FragmentActivity) {
                         .build()
                 }
                 else -> {
-                    // Fallback to device credential
                     BiometricPrompt.PromptInfo.Builder()
                         .setTitle("Authenticate")
                         .setSubtitle("Enter your PIN, pattern, or password")
-                        .setDeviceCredentialAllowed(true) // Use deprecated method for API 29
+                        .setDeviceCredentialAllowed(true)
                         .build()
                 }
             }

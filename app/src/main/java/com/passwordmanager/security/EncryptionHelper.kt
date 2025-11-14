@@ -9,8 +9,6 @@ class EncryptionHelper {
 
     private val ALGORITHM = "AES"
     private val TRANSFORMATION = "AES/ECB/PKCS5Padding"
-
-    // AES encryption key. Must be 16, 24, or 32 bytes long.
     private val secretKey = "ThisIsA32ByteSecretKeyForAES!!!!"
 
     private val keySpec = SecretKeySpec(secretKey.toByteArray(Charsets.UTF_8), ALGORITHM)

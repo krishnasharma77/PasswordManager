@@ -1,4 +1,4 @@
-package com.passwordmanager.ui.theme
+package com.passwordmanager.ui.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 class HomeViewModel(private val repo: PasswordRepository) : ViewModel() {
 
     val passwords = repo.getAll()
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())
+        .stateIn(viewModelScope, SharingStarted.Companion.WhileSubscribed(), emptyList())
 
     fun delete(entity: PasswordEntity) {
         viewModelScope.launch {

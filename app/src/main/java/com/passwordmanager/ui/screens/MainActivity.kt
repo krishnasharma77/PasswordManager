@@ -1,4 +1,4 @@
-package com.passwordmanager
+package com.passwordmanager.ui.screens
 
 import android.os.Bundle
 import android.util.Log
@@ -39,8 +39,8 @@ import com.passwordmanager.data.PasswordEntity
 import com.passwordmanager.data.PasswordRepository
 import com.passwordmanager.security.AuthManager
 import com.passwordmanager.security.EncryptionHelper
-import com.passwordmanager.ui.theme.HomeViewModel
-import com.passwordmanager.ui.theme.HomeViewModelFactory
+import com.passwordmanager.ui.screens.HomeViewModel
+import com.passwordmanager.ui.screens.HomeViewModelFactory
 import kotlinx.coroutines.launch
 
 class MainActivity : FragmentActivity() {
